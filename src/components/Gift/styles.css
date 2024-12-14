@@ -1,0 +1,281 @@
+.gifts-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.gifts-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Left side gifts */
+.gifts-grid .gift:nth-child(-n+5) {
+    position: fixed;
+    left: calc(50% - 450px);
+    pointer-events: auto;
+}
+
+/* Right side gifts */
+.gifts-grid .gift:nth-child(n+6) {
+    position: fixed;
+    right: calc(50% - 450px);
+    pointer-events: auto;
+}
+
+/* Position each gift */
+.gifts-grid .gift:nth-child(1) {
+    top: 10%;
+}
+
+.gifts-grid .gift:nth-child(2) {
+    top: 25%;
+}
+
+.gifts-grid .gift:nth-child(3) {
+    top: 40%;
+}
+
+.gifts-grid .gift:nth-child(4) {
+    top: 55%;
+}
+
+.gifts-grid .gift:nth-child(5) {
+    top: 70%;
+}
+
+.gifts-grid .gift:nth-child(6) {
+    top: 10%;
+}
+
+.gifts-grid .gift:nth-child(7) {
+    top: 25%;
+}
+
+.gifts-grid .gift:nth-child(8) {
+    top: 40%;
+}
+
+.gifts-grid .gift:nth-child(9) {
+    top: 55%;
+}
+
+.gifts-grid .gift:nth-child(10) {
+    top: 70%;
+}
+
+.gift {
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: rotate(var(--rotation));
+    z-index: 100;
+}
+
+.gift:hover {
+    transform: scale(1.1) rotate(var(--rotation));
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gift.opened {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.gift-box {
+    font-size: 4em;
+    pointer-events: none;
+}
+
+.message-popup {
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 30px 50px;
+    border-radius: 20px;
+    font-size: 1em;
+    z-index: 1000;
+    min-width: 300px;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Alert summary 2 cột */
+.alert-summary-2column {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+    z-index: 2000;
+    animation: fadeInOverlay 0.5s ease forwards;
+}
+
+/* Cột các món quà đã chọn và chưa chọn */
+.chosen-column,
+.remaining-column {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.9));
+    color: #333;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 1.2em;
+    animation: fadeIn 0.8s ease forwards;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    opacity: 0;
+}
+
+/* Vị trí cột các quà đã chọn bên trái */
+.chosen-column {
+    left: calc(50% - 700px);
+    animation-name: fadeInLeft;
+    /* Hiệu ứng xuất hiện từ trái */
+}
+
+/* Vị trí cột các quà chưa chọn bên phải */
+.remaining-column {
+    right: calc(50% - 700px);
+    animation-name: fadeInRight;
+    /* Hiệu ứng xuất hiện từ phải */
+}
+
+.alert-summary-2column h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.alert-summary-2column ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 20px;
+    text-align: left;
+    font-size: 1.1em;
+    line-height: 1.4em;
+}
+
+.alert-summary-2column li {
+    margin: 5px 0;
+    font-weight: bold;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+}
+
+.alert-actions {
+    position: fixed;
+    top: calc(50% + 200px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2001;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    font-size: 1.2em;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.close-button {
+    background: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.close-button:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate(-30%, -50%) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate(30%, -50%) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+        background: rgba(0, 0, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.2);
+    }
+}
