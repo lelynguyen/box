@@ -12,12 +12,12 @@ interface GiftContent {
 }
 
 const GIFTS: GiftContent[] = [
-    { id: 1, message: "Một đêm tuỵt vời tại homestay ^^", color: "#FF6B6B" },
+    { id: 1, message: "Có một ngừi iu tuỵt vời ^^", color: "#FF6B6B" },
     { id: 2, message: "Đấm bóp trong 15p!", color: "#4ECDC4" },
     { id: 3, message: "Một ly trà sữa!", color: "#45B7D1" },
     { id: 4, message: "Chụp Photobooth bất cứ khi nào em thích!", color: "#96CEB4" },
     { id: 5, message: "Giành rửa chén cho em cho đến khi hết năm 4!", color: "#FFEEAD" },
-    { id: 6, message: "Cho em nghịch thằng nhỏ thỏa thích, hehehe", color: "#D4A5A5" },
+    { id: 6, message: "Chở đi ăn gà, hehehe", color: "#D4A5A5" },
     { id: 7, message: "Mua cho em một món đồ bất kỳ trong siêu thị!", color: "#9B59B6" },
     { id: 8, message: "Một bé gấu bông <150k", color: "#3498DB" },
     { id: 9, message: "Tặng một giá đỡ điện thoại như cái của anh!", color: "#E74C3C" },
